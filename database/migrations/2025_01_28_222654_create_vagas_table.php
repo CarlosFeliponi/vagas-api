@@ -9,10 +9,11 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()//: void
+    public function up(): void
     {
         Schema::create('vagas', function (Blueprint $table) {
-            $table->id();
+            // $table->id();
+            $table->increments('id');
             $table->string('titulo');
             $table->string('cargo');
             $table->decimal('salario', 8, 2);

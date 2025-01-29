@@ -1,14 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 use App\Http\Controllers\VagaController;
 
-// Router::resource('vagas', VagaController::class);
+Route::get('/', function () {
+    return "WEB!";
+});
 
-Route::get('/vagas', [VagaController::class, 'index']);
+Route::resource('vagas', VagaController::class)->only([
+    'index'
+]);
+
 
